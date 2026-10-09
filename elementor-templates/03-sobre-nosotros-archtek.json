@@ -1,0 +1,175 @@
+{
+  "version": "0.4",
+  "title": "Archtek - 03 Sobre Nosotros",
+  "type": "section",
+  "content": [
+    {
+      "id": "2vmjem8",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "css_id": "nosotros",
+        "background_background": "classic",
+        "background_color": "#141414",
+        "padding": {
+          "top": "120",
+          "right": "40",
+          "bottom": "120",
+          "left": "40",
+          "unit": "px"
+        }
+      },
+      "elements": [
+        {
+          "id": "zwf0mve",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100
+          },
+          "elements": [
+            {
+              "id": "dn79pmh",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "SOBRE NOSOTROS",
+                "header_size": "h2",
+                "title_color": "#f0ece6",
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display",
+                "typography_font_size": {
+                  "size": 52,
+                  "unit": "px"
+                },
+                "typography_font_weight": "700",
+                "_margin": {
+                  "bottom": 30,
+                  "unit": "px"
+                }
+              }
+            },
+            {
+              "id": "d4aopzt",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style=\"font-size: 20px; line-height: 1.8;\">Archtek Studio nació de la pasión por la tecnología, el diseño y la convicción de que la iluminación no es un detalle — es el lenguaje con el que un espacio habla. Con más de 10 años de experiencia desarrollando proyectos en Colombia y Estados Unidos, somos un estudio especializado en diseño de iluminación, sistemas de control de iluminación y tecnología audiovisual para proyectos de alta especificación.</p>",
+                "text_color": "#f0ece6",
+                "typography_typography": "custom",
+                "typography_font_family": "DM Sans",
+                "_margin": {
+                  "bottom": 60,
+                  "unit": "px"
+                }
+              }
+            },
+            {
+              "id": "udfphof",
+              "elType": "section",
+              "isInner": true,
+              "elements": [
+                {
+                  "id": "p2qfe9w",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 33
+                  },
+                  "elements": [
+                    {
+                      "id": "o7ahjrb",
+                      "elType": "widget",
+                      "widgetType": "counter",
+                      "settings": {
+                        "starting_number": 0,
+                        "ending_number": 10,
+                        "prefix": "+",
+                        "title": "Años de experiencia",
+                        "number_color": "#c9a050",
+                        "title_color": "#f0ece6",
+                        "typography_number_font_family": "Playfair Display",
+                        "typography_title_font_family": "DM Sans"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "rsfjbwz",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 33
+                  },
+                  "elements": [
+                    {
+                      "id": "jg5jt9w",
+                      "elType": "widget",
+                      "widgetType": "counter",
+                      "settings": {
+                        "starting_number": 0,
+                        "ending_number": 200,
+                        "prefix": "+",
+                        "title": "Proyectos ejecutados",
+                        "number_color": "#c9a050",
+                        "title_color": "#f0ece6",
+                        "typography_number_font_family": "Playfair Display",
+                        "typography_title_font_family": "DM Sans"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "tkw7pka",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 33
+                  },
+                  "elements": [
+                    {
+                      "id": "939y0ap",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "COLOMBIA · ESTADOS UNIDOS",
+                        "header_size": "h4",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 16,
+                          "unit": "px"
+                        },
+                        "typography_letter_spacing": {
+                          "size": 2,
+                          "unit": "px"
+                        },
+                        "_margin": {
+                          "top": 15,
+                          "bottom": 5,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "ueone1m",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Residencial · Comercial · Hotelero</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 14,
+                          "unit": "px"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "description": "Delivers a premium, immersive website experience with sophisticated animations, smooth scroll, and editorial design tailored for creative studios and agencies.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

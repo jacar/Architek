@@ -1,0 +1,486 @@
+{
+  "version": "0.4",
+  "title": "Archtek - 02 Proyectos Destacados",
+  "type": "section",
+  "content": [
+    {
+      "id": "5ygrv0x",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "css_id": "proyectos",
+        "background_background": "classic",
+        "background_color": "#0c0c0c",
+        "padding": {
+          "top": "100",
+          "right": "40",
+          "bottom": "100",
+          "left": "40",
+          "unit": "px"
+        }
+      },
+      "elements": [
+        {
+          "id": "x45jafk",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100
+          },
+          "elements": [
+            {
+              "id": "6tovq0d",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "PROYECTOS SELECCIONADOS",
+                "header_size": "h2",
+                "title_color": "#f0ece6",
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display",
+                "typography_font_size": {
+                  "size": 48,
+                  "unit": "px"
+                },
+                "typography_font_weight": "700",
+                "_margin": {
+                  "bottom": 50,
+                  "unit": "px"
+                }
+              }
+            },
+            {
+              "id": "1cp5qyl",
+              "elType": "section",
+              "isInner": true,
+              "elements": [
+                {
+                  "id": "2r62hxe",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 50,
+                    "_inline_size_tablet": 100,
+                    "padding": {
+                      "top": 20,
+                      "right": 20,
+                      "bottom": 40,
+                      "left": 20,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "kif15o4",
+                      "elType": "widget",
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&fit=crop",
+                          "id": ""
+                        },
+                        "image_size": "full",
+                        "border_radius": {
+                          "top": 4,
+                          "right": 4,
+                          "bottom": 4,
+                          "left": 4,
+                          "unit": "px"
+                        },
+                        "_margin": {
+                          "bottom": 20,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "c6qjoiv",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "01 / HOTELERO · CARTAGENA, COLOMBIA",
+                        "header_size": "p",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 12,
+                          "unit": "px"
+                        },
+                        "typography_letter_spacing": {
+                          "size": 2,
+                          "unit": "px"
+                        },
+                        "_margin": {
+                          "bottom": 8,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "d7iyet8",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "HOTEL OSH",
+                        "header_size": "h3",
+                        "title_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 24,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "600",
+                        "_margin": {
+                          "bottom": 12,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "rpzvres",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Diseño del control de iluminación, especificación y suministro de componentes integrando marcas de renombre: FLOS · LUTRON · MARSET · LODES ITALIA.</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 14,
+                          "unit": "px"
+                        },
+                        "typography_line_height": {
+                          "size": 1.7,
+                          "unit": "em"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "kyzczmv",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 50,
+                    "_inline_size_tablet": 100,
+                    "padding": {
+                      "top": 20,
+                      "right": 20,
+                      "bottom": 40,
+                      "left": 20,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "7iranjw",
+                      "elType": "widget",
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&fit=crop",
+                          "id": ""
+                        },
+                        "image_size": "full",
+                        "border_radius": {
+                          "top": 4,
+                          "right": 4,
+                          "bottom": 4,
+                          "left": 4,
+                          "unit": "px"
+                        },
+                        "_margin": {
+                          "bottom": 20,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "ztulomx",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "02 / RESIDENCIAL · MEDELLÍN, COLOMBIA",
+                        "header_size": "p",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 12,
+                          "unit": "px"
+                        },
+                        "typography_letter_spacing": {
+                          "size": 2,
+                          "unit": "px"
+                        },
+                        "_margin": {
+                          "bottom": 8,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "loze1rp",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "RESIDENCIA PRIVADA, ALTO DE LAS PALMAS",
+                        "header_size": "h3",
+                        "title_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 24,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "600",
+                        "_margin": {
+                          "bottom": 12,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "zgc86ip",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Diseño integral de iluminación, escenas lumínicas inteligentes personalizadas y automatización de cortinas Lutron.</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 14,
+                          "unit": "px"
+                        },
+                        "typography_line_height": {
+                          "size": 1.7,
+                          "unit": "em"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "pvb78ha",
+              "elType": "section",
+              "isInner": true,
+              "elements": [
+                {
+                  "id": "5grd260",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 50,
+                    "_inline_size_tablet": 100,
+                    "padding": {
+                      "top": 20,
+                      "right": 20,
+                      "bottom": 40,
+                      "left": 20,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "sf3xpym",
+                      "elType": "widget",
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&fit=crop",
+                          "id": ""
+                        },
+                        "image_size": "full",
+                        "border_radius": {
+                          "top": 4,
+                          "right": 4,
+                          "bottom": 4,
+                          "left": 4,
+                          "unit": "px"
+                        },
+                        "_margin": {
+                          "bottom": 20,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "33hz6ea",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "03 / RESIDENCIAL · RIONEGRO, ANTIOQUIA",
+                        "header_size": "p",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 12,
+                          "unit": "px"
+                        },
+                        "typography_letter_spacing": {
+                          "size": 2,
+                          "unit": "px"
+                        },
+                        "_margin": {
+                          "bottom": 8,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "i9jf7u0",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "RESIDENCIA PRIVADA, LA RESERVA",
+                        "header_size": "h3",
+                        "title_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 24,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "600",
+                        "_margin": {
+                          "bottom": 12,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "569qm7j",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Iluminación arquitectónica integrada al entorno campestre y materiales naturales.</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 14,
+                          "unit": "px"
+                        },
+                        "typography_line_height": {
+                          "size": 1.7,
+                          "unit": "em"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "q4twgm1",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 50,
+                    "_inline_size_tablet": 100,
+                    "padding": {
+                      "top": 20,
+                      "right": 20,
+                      "bottom": 40,
+                      "left": 20,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "l8hrhml",
+                      "elType": "widget",
+                      "widgetType": "image",
+                      "settings": {
+                        "image": {
+                          "url": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&fit=crop",
+                          "id": ""
+                        },
+                        "image_size": "full",
+                        "border_radius": {
+                          "top": 4,
+                          "right": 4,
+                          "bottom": 4,
+                          "left": 4,
+                          "unit": "px"
+                        },
+                        "_margin": {
+                          "bottom": 20,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "rxwwyds",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "04 / RESIDENCIAL · MIAMI, FLORIDA, USA",
+                        "header_size": "p",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 12,
+                          "unit": "px"
+                        },
+                        "typography_letter_spacing": {
+                          "size": 2,
+                          "unit": "px"
+                        },
+                        "_margin": {
+                          "bottom": 8,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "d4cy9sb",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "APARTAMENTO EN MIAMI",
+                        "header_size": "h3",
+                        "title_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 24,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "600",
+                        "_margin": {
+                          "bottom": 12,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "of2xtk4",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Proyecto internacional con altos estándares técnicos de diseño lumínico y domótica.</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 14,
+                          "unit": "px"
+                        },
+                        "typography_line_height": {
+                          "size": 1.7,
+                          "unit": "em"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

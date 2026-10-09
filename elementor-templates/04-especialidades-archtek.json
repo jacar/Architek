@@ -1,0 +1,634 @@
+{
+  "version": "0.4",
+  "title": "Archtek - 04 Especialidades",
+  "type": "section",
+  "content": [
+    {
+      "id": "evvkypo",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "css_id": "especialidades",
+        "background_background": "classic",
+        "background_color": "#0c0c0c",
+        "padding": {
+          "top": "100",
+          "right": "40",
+          "bottom": "100",
+          "left": "40",
+          "unit": "px"
+        }
+      },
+      "elements": [
+        {
+          "id": "kn28sqb",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100
+          },
+          "elements": [
+            {
+              "id": "yz72elz",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "NUESTRAS ESPECIALIDADES",
+                "header_size": "h2",
+                "title_color": "#f0ece6",
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display",
+                "typography_font_size": {
+                  "size": 48,
+                  "unit": "px"
+                },
+                "typography_font_weight": "700",
+                "_margin": {
+                  "bottom": 50,
+                  "unit": "px"
+                }
+              }
+            },
+            {
+              "id": "m5fm0wl",
+              "elType": "section",
+              "isInner": true,
+              "elements": [
+                {
+                  "id": "rdeegh7",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 33,
+                    "_inline_size_tablet": 50,
+                    "_inline_size_mobile": 100,
+                    "background_background": "classic",
+                    "background_color": "#141414",
+                    "border_border": "solid",
+                    "border_width": {
+                      "top": 1,
+                      "right": 1,
+                      "bottom": 1,
+                      "left": 1,
+                      "unit": "px"
+                    },
+                    "border_color": "rgba(240, 236, 230, 0.1)",
+                    "padding": {
+                      "top": 35,
+                      "right": 30,
+                      "bottom": 35,
+                      "left": 30,
+                      "unit": "px"
+                    },
+                    "_margin": {
+                      "bottom": 25,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "zx1wvea",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "01",
+                        "header_size": "span",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 28,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "700",
+                        "_margin": {
+                          "bottom": 15,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "tr0sxh4",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Diseño de Iluminación",
+                        "header_size": "h3",
+                        "title_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 20,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "600",
+                        "_margin": {
+                          "bottom": 12,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "rox4lvt",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Conceptos lumínicos que equilibran estética, confort y funcionalidad arquitectónica.</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 14,
+                          "unit": "px"
+                        },
+                        "typography_line_height": {
+                          "size": 1.6,
+                          "unit": "em"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "7a20olq",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 33,
+                    "_inline_size_tablet": 50,
+                    "_inline_size_mobile": 100,
+                    "background_background": "classic",
+                    "background_color": "#141414",
+                    "border_border": "solid",
+                    "border_width": {
+                      "top": 1,
+                      "right": 1,
+                      "bottom": 1,
+                      "left": 1,
+                      "unit": "px"
+                    },
+                    "border_color": "rgba(240, 236, 230, 0.1)",
+                    "padding": {
+                      "top": 35,
+                      "right": 30,
+                      "bottom": 35,
+                      "left": 30,
+                      "unit": "px"
+                    },
+                    "_margin": {
+                      "bottom": 25,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "lxgbngf",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "02",
+                        "header_size": "span",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 28,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "700",
+                        "_margin": {
+                          "bottom": 15,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "kj8nm41",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Sistemas de Control y Automatización",
+                        "header_size": "h3",
+                        "title_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 20,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "600",
+                        "_margin": {
+                          "bottom": 12,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "6rupox7",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Tecnología para que iluminación, audio y video operen en perfecta armonía intuitiva.</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 14,
+                          "unit": "px"
+                        },
+                        "typography_line_height": {
+                          "size": 1.6,
+                          "unit": "em"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "lccl5s6",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 33,
+                    "_inline_size_tablet": 50,
+                    "_inline_size_mobile": 100,
+                    "background_background": "classic",
+                    "background_color": "#141414",
+                    "border_border": "solid",
+                    "border_width": {
+                      "top": 1,
+                      "right": 1,
+                      "bottom": 1,
+                      "left": 1,
+                      "unit": "px"
+                    },
+                    "border_color": "rgba(240, 236, 230, 0.1)",
+                    "padding": {
+                      "top": 35,
+                      "right": 30,
+                      "bottom": 35,
+                      "left": 30,
+                      "unit": "px"
+                    },
+                    "_margin": {
+                      "bottom": 25,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "wgzo74l",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "03",
+                        "header_size": "span",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 28,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "700",
+                        "_margin": {
+                          "bottom": 15,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "4r7l4kf",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Suministro de Luminarias",
+                        "header_size": "h3",
+                        "title_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 20,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "600",
+                        "_margin": {
+                          "bottom": 12,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "ho8n5m5",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Especificación de marcas líderes a nivel mundial para garantizar acabados de lujo.</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 14,
+                          "unit": "px"
+                        },
+                        "typography_line_height": {
+                          "size": 1.6,
+                          "unit": "em"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "iy5ehun",
+              "elType": "section",
+              "isInner": true,
+              "elements": [
+                {
+                  "id": "8xvsdt4",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 33,
+                    "_inline_size_tablet": 50,
+                    "_inline_size_mobile": 100,
+                    "background_background": "classic",
+                    "background_color": "#141414",
+                    "border_border": "solid",
+                    "border_width": {
+                      "top": 1,
+                      "right": 1,
+                      "bottom": 1,
+                      "left": 1,
+                      "unit": "px"
+                    },
+                    "border_color": "rgba(240, 236, 230, 0.1)",
+                    "padding": {
+                      "top": 35,
+                      "right": 30,
+                      "bottom": 35,
+                      "left": 30,
+                      "unit": "px"
+                    },
+                    "_margin": {
+                      "bottom": 25,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "zl3bcw2",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "04",
+                        "header_size": "span",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 28,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "700",
+                        "_margin": {
+                          "bottom": 15,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "knre8m9",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Diseño de Control Lumínico",
+                        "header_size": "h3",
+                        "title_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 20,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "600",
+                        "_margin": {
+                          "bottom": 12,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "cr9oyvb",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Escenas personalizadas para adaptar el ambiente a cada momento de forma intuitiva.</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 14,
+                          "unit": "px"
+                        },
+                        "typography_line_height": {
+                          "size": 1.6,
+                          "unit": "em"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "jfv8v9w",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 33,
+                    "_inline_size_tablet": 50,
+                    "_inline_size_mobile": 100,
+                    "background_background": "classic",
+                    "background_color": "#141414",
+                    "border_border": "solid",
+                    "border_width": {
+                      "top": 1,
+                      "right": 1,
+                      "bottom": 1,
+                      "left": 1,
+                      "unit": "px"
+                    },
+                    "border_color": "rgba(240, 236, 230, 0.1)",
+                    "padding": {
+                      "top": 35,
+                      "right": 30,
+                      "bottom": 35,
+                      "left": 30,
+                      "unit": "px"
+                    },
+                    "_margin": {
+                      "bottom": 25,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "7w8sne5",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "05",
+                        "header_size": "span",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 28,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "700",
+                        "_margin": {
+                          "bottom": 15,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "s0vc4h7",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Sistemas de Audio",
+                        "header_size": "h3",
+                        "title_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 20,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "600",
+                        "_margin": {
+                          "bottom": 12,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "lrz78pq",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Audio distribuido, ambiental comercial, surround de cine y audio exterior de intemperie.</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 14,
+                          "unit": "px"
+                        },
+                        "typography_line_height": {
+                          "size": 1.6,
+                          "unit": "em"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "4122oos",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 33,
+                    "_inline_size_tablet": 50,
+                    "_inline_size_mobile": 100,
+                    "background_background": "classic",
+                    "background_color": "#141414",
+                    "border_border": "solid",
+                    "border_width": {
+                      "top": 1,
+                      "right": 1,
+                      "bottom": 1,
+                      "left": 1,
+                      "unit": "px"
+                    },
+                    "border_color": "rgba(240, 236, 230, 0.1)",
+                    "padding": {
+                      "top": 35,
+                      "right": 30,
+                      "bottom": 35,
+                      "left": 30,
+                      "unit": "px"
+                    },
+                    "_margin": {
+                      "bottom": 25,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "cefvy6q",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "06",
+                        "header_size": "span",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 28,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "700",
+                        "_margin": {
+                          "bottom": 15,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "xd80zsr",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Acompañamiento en Obra",
+                        "header_size": "h3",
+                        "title_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 20,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "600",
+                        "_margin": {
+                          "bottom": 12,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "sx4j4yd",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Supervisión de cada detalle de instalación y puesta en marcha fiel al diseño original.</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 14,
+                          "unit": "px"
+                        },
+                        "typography_line_height": {
+                          "size": 1.6,
+                          "unit": "em"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,458 @@
+{
+  "version": "0.4",
+  "title": "Archtek - 05 Proceso",
+  "type": "section",
+  "content": [
+    {
+      "id": "g3j2jjn",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "css_id": "proceso",
+        "background_background": "classic",
+        "background_color": "#141414",
+        "padding": {
+          "top": "100",
+          "right": "40",
+          "bottom": "100",
+          "left": "40",
+          "unit": "px"
+        }
+      },
+      "elements": [
+        {
+          "id": "eebrvzo",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100
+          },
+          "elements": [
+            {
+              "id": "66ozkgf",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "NUESTRO PROCESO",
+                "header_size": "h2",
+                "title_color": "#f0ece6",
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display",
+                "typography_font_size": {
+                  "size": 48,
+                  "unit": "px"
+                },
+                "typography_font_weight": "700",
+                "_margin": {
+                  "bottom": 50,
+                  "unit": "px"
+                }
+              }
+            },
+            {
+              "id": "42clscz",
+              "elType": "section",
+              "isInner": true,
+              "elements": [
+                {
+                  "id": "1d50ucq",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 20,
+                    "_inline_size_tablet": 50,
+                    "_inline_size_mobile": 100,
+                    "padding": {
+                      "top": 20,
+                      "right": 15,
+                      "bottom": 20,
+                      "left": 15,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "nfhxzxl",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "01",
+                        "header_size": "span",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 40,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "700",
+                        "_margin": {
+                          "bottom": 10,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "siwlxqe",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Consulta inicial",
+                        "header_size": "h4",
+                        "title_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 18,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "600",
+                        "_margin": {
+                          "bottom": 10,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "63ct3dy",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Analizamos planos, materiales, tiempos y la visión que deseas proyectar.</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 13,
+                          "unit": "px"
+                        },
+                        "typography_line_height": {
+                          "size": 1.5,
+                          "unit": "em"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "s9o9e7b",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 20,
+                    "_inline_size_tablet": 50,
+                    "_inline_size_mobile": 100,
+                    "padding": {
+                      "top": 20,
+                      "right": 15,
+                      "bottom": 20,
+                      "left": 15,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "zga4eei",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "02",
+                        "header_size": "span",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 40,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "700",
+                        "_margin": {
+                          "bottom": 10,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "oltlr4h",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Concepto lumínico",
+                        "header_size": "h4",
+                        "title_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 18,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "600",
+                        "_margin": {
+                          "bottom": 10,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "p0ksrzk",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Desarrollamos el diseño interpretando arquitectura y experiencia.</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 13,
+                          "unit": "px"
+                        },
+                        "typography_line_height": {
+                          "size": 1.5,
+                          "unit": "em"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "w3nbfti",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 20,
+                    "_inline_size_tablet": 50,
+                    "_inline_size_mobile": 100,
+                    "padding": {
+                      "top": 20,
+                      "right": 15,
+                      "bottom": 20,
+                      "left": 15,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "ekl7n9i",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "03",
+                        "header_size": "span",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 40,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "700",
+                        "_margin": {
+                          "bottom": 10,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "a0vrnyr",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Cotización y Especificación",
+                        "header_size": "h4",
+                        "title_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 18,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "600",
+                        "_margin": {
+                          "bottom": 10,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "ofi2awy",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Presupuesto y selección de luminarias exactas para el proyecto.</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 13,
+                          "unit": "px"
+                        },
+                        "typography_line_height": {
+                          "size": 1.5,
+                          "unit": "em"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "edxjl2u",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 20,
+                    "_inline_size_tablet": 50,
+                    "_inline_size_mobile": 100,
+                    "padding": {
+                      "top": 20,
+                      "right": 15,
+                      "bottom": 20,
+                      "left": 15,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "ik2y7ky",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "04",
+                        "header_size": "span",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 40,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "700",
+                        "_margin": {
+                          "bottom": 10,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "5ez1r17",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Suministro y coordinación",
+                        "header_size": "h4",
+                        "title_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 18,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "600",
+                        "_margin": {
+                          "bottom": 10,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "hwhi18a",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Importación y logística sincronizada con la obra.</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 13,
+                          "unit": "px"
+                        },
+                        "typography_line_height": {
+                          "size": 1.5,
+                          "unit": "em"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "v09vslu",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 20,
+                    "_inline_size_tablet": 50,
+                    "_inline_size_mobile": 100,
+                    "padding": {
+                      "top": 20,
+                      "right": 15,
+                      "bottom": 20,
+                      "left": 15,
+                      "unit": "px"
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "acf65ua",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "05",
+                        "header_size": "span",
+                        "title_color": "#c9a050",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 40,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "700",
+                        "_margin": {
+                          "bottom": 10,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "eqnsa2g",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "settings": {
+                        "title": "Instalación y puesta en marcha",
+                        "header_size": "h4",
+                        "title_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Playfair Display",
+                        "typography_font_size": {
+                          "size": 18,
+                          "unit": "px"
+                        },
+                        "typography_font_weight": "600",
+                        "_margin": {
+                          "bottom": 10,
+                          "unit": "px"
+                        }
+                      }
+                    },
+                    {
+                      "id": "80pku2l",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "settings": {
+                        "editor": "<p>Supervisión en obra y programación de escenas lumínicas.</p>",
+                        "text_color": "rgba(240, 236, 230, 0.65)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_size": {
+                          "size": 13,
+                          "unit": "px"
+                        },
+                        "typography_line_height": {
+                          "size": 1.5,
+                          "unit": "em"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

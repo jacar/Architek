@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "my-blog-elementor": {
+      "type": "http",
+      "url": "https://www.archtekstudio.com/wp-json/elementor/mcp/",
+      "headers": {
+        "Authorization": "Basic QmFja2VuZF8yMDI2OnN3eVVrdXNmRnBVNnc3RXhLbG5LQzRJUg=="
+      }
+    }
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "version": "0.4",
+  "title": "Archtek - 01 Hero Section",
+  "type": "section",
+  "content": [
+    {
+      "id": "beaftuu",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width",
+        "height": "min-height",
+        "custom_height": {
+          "size": 100,
+          "unit": "vh"
+        },
+        "background_background": "classic",
+        "background_image": {
+          "url": "https://www.archtekstudio.com/wp-content/uploads/2026/09/ChatGPT-Image-26-sept-2026-08_16_44.png",
+          "id": ""
+        },
+        "background_position": "center center",
+        "background_size": "cover",
+        "background_overlay_background": "classic",
+        "background_overlay_color": "rgba(12, 12, 12, 0.75)",
+        "padding": {
+          "top": "120",
+          "right": "40",
+          "bottom": "100",
+          "left": "40",
+          "unit": "px",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "vurt9kz",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100,
+            "content_position": "middle"
+          },
+          "elements": [
+            {
+              "id": "iga4mxj",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "DISEÑO DE ILUMINACIÓN · CONTROL · TECNOLOGÍA",
+                "header_size": "p",
+                "title_color": "#c9a050",
+                "typography_typography": "custom",
+                "typography_font_family": "DM Sans",
+                "typography_font_size": {
+                  "size": 13,
+                  "unit": "px"
+                },
+                "typography_font_weight": "600",
+                "typography_letter_spacing": {
+                  "size": 4,
+                  "unit": "px"
+                },
+                "_margin": {
+                  "bottom": "20",
+                  "unit": "px"
+                }
+              }
+            },
+            {
+              "id": "152ab0w",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "ILUMINACIÓN<br>QUE DEFINE<br>ESPACIOS.",
+                "header_size": "h1",
+                "title_color": "#f0ece6",
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display",
+                "typography_font_size": {
+                  "size": 76,
+                  "unit": "px"
+                },
+                "typography_font_size_tablet": {
+                  "size": 54,
+                  "unit": "px"
+                },
+                "typography_font_size_mobile": {
+                  "size": 38,
+                  "unit": "px"
+                },
+                "typography_font_weight": "700",
+                "typography_line_height": {
+                  "size": 1.05,
+                  "unit": "em"
+                },
+                "typography_letter_spacing": {
+                  "size": -1,
+                  "unit": "px"
+                },
+                "_margin": {
+                  "bottom": "25",
+                  "unit": "px"
+                }
+              }
+            },
+            {
+              "id": "u4kwu2p",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Diseño de iluminación, control de iluminación y tecnología para proyectos de alta categoría en Colombia y Estados Unidos.</p>",
+                "text_color": "rgba(240, 236, 230, 0.65)",
+                "typography_typography": "custom",
+                "typography_font_family": "DM Sans",
+                "typography_font_size": {
+                  "size": 18,
+                  "unit": "px"
+                },
+                "typography_line_height": {
+                  "size": 1.6,
+                  "unit": "em"
+                },
+                "_margin": {
+                  "bottom": "40",
+                  "unit": "px"
+                }
+              }
+            },
+            {
+              "id": "bseeva6",
+              "elType": "section",
+              "isInner": true,
+              "settings": {
+                "gap": "extended"
+              },
+              "elements": [
+                {
+                  "id": "fgh1slp",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 50
+                  },
+                  "elements": [
+                    {
+                      "id": "hww8b9g",
+                      "elType": "widget",
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "VER PROYECTOS",
+                        "link": {
+                          "url": "#proyectos"
+                        },
+                        "button_text_color": "#0c0c0c",
+                        "background_color": "#f0ece6",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_weight": "600",
+                        "typography_letter_spacing": {
+                          "size": 2,
+                          "unit": "px"
+                        },
+                        "border_radius": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0,
+                          "unit": "px"
+                        },
+                        "button_padding": {
+                          "top": 18,
+                          "right": 36,
+                          "bottom": 18,
+                          "left": 36,
+                          "unit": "px"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "u9883ze",
+                  "elType": "column",
+                  "settings": {
+                    "_column_size": 50
+                  },
+                  "elements": [
+                    {
+                      "id": "gst58pa",
+                      "elType": "widget",
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "CONTACTAR ESTUDIO",
+                        "link": {
+                          "url": "#contacto"
+                        },
+                        "button_text_color": "#f0ece6",
+                        "background_color": "transparent",
+                        "border_border": "solid",
+                        "border_width": {
+                          "top": 1,
+                          "right": 1,
+                          "bottom": 1,
+                          "left": 1,
+                          "unit": "px"
+                        },
+                        "border_color": "rgba(240, 236, 230, 0.1)",
+                        "typography_typography": "custom",
+                        "typography_font_family": "DM Sans",
+                        "typography_font_weight": "600",
+                        "typography_letter_spacing": {
+                          "size": 2,
+                          "unit": "px"
+                        },
+                        "border_radius": {
+                          "top": 0,
+                          "right": 0,
+                          "bottom": 0,
+                          "left": 0,
+                          "unit": "px"
+                        },
+                        "button_padding": {
+                          "top": 18,
+                          "right": 36,
+                          "bottom": 18,
+                          "left": 36,
+                          "unit": "px"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

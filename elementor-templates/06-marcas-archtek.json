@@ -1,0 +1,81 @@
+{
+  "version": "0.4",
+  "title": "Archtek - 06 Marcas Aliadas",
+  "type": "section",
+  "content": [
+    {
+      "id": "go2c6lh",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#0c0c0c",
+        "padding": {
+          "top": "80",
+          "right": "40",
+          "bottom": "80",
+          "left": "40",
+          "unit": "px"
+        }
+      },
+      "elements": [
+        {
+          "id": "s7h29vp",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100
+          },
+          "elements": [
+            {
+              "id": "a1mplmv",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "MARCAS ALIADAS",
+                "header_size": "h3",
+                "align": "center",
+                "title_color": "#c9a050",
+                "typography_typography": "custom",
+                "typography_font_family": "DM Sans",
+                "typography_font_size": {
+                  "size": 14,
+                  "unit": "px"
+                },
+                "typography_letter_spacing": {
+                  "size": 4,
+                  "unit": "px"
+                },
+                "_margin": {
+                  "bottom": 25,
+                  "unit": "px"
+                }
+              }
+            },
+            {
+              "id": "anomsmw",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "FLOS · LUTRON · MARSET · LODES ITALIA · HOFFLIGHTS",
+                "header_size": "p",
+                "align": "center",
+                "title_color": "rgba(240, 236, 230, 0.65)",
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display",
+                "typography_font_size": {
+                  "size": 24,
+                  "unit": "px"
+                },
+                "typography_letter_spacing": {
+                  "size": 2,
+                  "unit": "px"
+                },
+                "typography_font_weight": "600"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
