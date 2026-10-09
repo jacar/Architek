@@ -196,7 +196,7 @@ export function ProjectList({ onViewGallery }: ProjectListProps) {
                 className="project-image-parallax"
                 src={project.cover}
                 alt={project.name}
-                loading="lazy"
+                loading={i === 0 ? 'eager' : 'lazy'}
                 decoding="async"
                 style={{
                   width: '100%',

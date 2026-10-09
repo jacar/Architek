@@ -20,17 +20,14 @@ const DAY_START = 6   // 06:00
 const DAY_END   = 18  // 18:00
 
 function detectAutoTheme(): Theme {
-  if (typeof window === 'undefined') return 'dark'
+  if (typeof window === 'undefined') return 'light'
 
   const hour = new Date().getHours()
+  // Día: 06:00 – 17:59 (6 AM a 6 PM) → 'light' (Modo Live)
+  // Noche: 18:00 – 05:59 (6 PM a 6 AM) → 'dark' (Modo Noche)
   const isNightByTime = hour < DAY_START || hour >= DAY_END
 
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-  const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches
-
-  if (isNightByTime) return 'dark'
-  if (systemPrefersDark && !systemPrefersLight) return 'dark'
-  return 'light'
+  return isNightByTime ? 'dark' : 'light'
 }
 
 const STORAGE_KEY = 'archtek-theme'
@@ -40,19 +37,10 @@ const SOURCE_KEY  = 'archtek-theme-source'
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [themeSource, setThemeSource] = useState<ThemeSource>(() => {
-    if (typeof window === 'undefined') return 'auto'
-    const saved = localStorage.getItem(SOURCE_KEY) as ThemeSource | null
-    return saved === 'manual' ? 'manual' : 'auto'
-  })
+  // Always start in auto mode — detect day/night from device
+  const [themeSource, setThemeSource] = useState<ThemeSource>('auto')
 
   const [theme, setThemeState] = useState<Theme>(() => {
-    if (typeof window === 'undefined') return 'dark'
-    const savedSource = localStorage.getItem(SOURCE_KEY) as ThemeSource | null
-    if (savedSource === 'manual') {
-      const savedTheme = localStorage.getItem(STORAGE_KEY) as Theme | null
-      if (savedTheme === 'dark' || savedTheme === 'light') return savedTheme
-    }
     return detectAutoTheme()
   })
 
@@ -87,13 +75,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   // ── Init theme on mount ──────────────────────────────────────────────────
   useEffect(() => {
-    const initial = themeSource === 'manual'
-      ? (localStorage.getItem(STORAGE_KEY) as Theme | null) ?? detectAutoTheme()
-      : detectAutoTheme()
-    applyTheme(initial, themeSource, false)
+    const initial = detectAutoTheme()
+    applyTheme(initial, 'auto', false)
   }, [])
 
-  // ── Automatic Day/Night & OS Preference Listener ─────────────────────────
+  // ── Automatic Day/Night Listener ─────────────────────────────────────────
   useEffect(() => {
     if (themeSource !== 'auto') return
 
@@ -105,20 +91,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     }
 
     const intervalId = setInterval(checkAuto, 30_000)
-
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    const handleMediaChange = () => checkAuto()
-    
-    if (mediaQuery.addEventListener) {
-      mediaQuery.addEventListener('change', handleMediaChange)
-    }
-
-    return () => {
-      clearInterval(intervalId)
-      if (mediaQuery.removeEventListener) {
-        mediaQuery.removeEventListener('change', handleMediaChange)
-      }
-    }
+    return () => clearInterval(intervalId)
   }, [themeSource, theme, applyTheme])
 
   // ── Public API ───────────────────────────────────────────────────────────

@@ -14,22 +14,16 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
   const { content } = useEdit()
   const galleryData = content?.gallery || defaultContent.gallery
 
-  // Dynamically merge editable gallery projects with static asset image arrays
-  const activeProjectsList: Proyecto[] = (galleryData.projects || []).map((editableP) => {
-    const original = proyectosConCover.find((p) => p.id === editableP.id)
-    const cover = editableP.cover || original?.cover || ''
-    const images = (editableP.images && editableP.images.length > 0)
-      ? editableP.images
-      : (original?.images && original.images.length > 0)
-        ? original.images
-        : [cover].filter(Boolean)
+  // Dynamically merge editable gallery projects text with canonical static asset image arrays
+  const activeProjectsList: Proyecto[] = proyectosConCover.map((original) => {
+    const editableP = (galleryData.projects || []).find((p) => p.id === original.id)
     return {
-      id: editableP.id,
-      name: editableP.name,
-      location: editableP.location,
-      cover,
-      images,
-      category: editableP.category,
+      id: original.id,
+      name: editableP?.name || original.name,
+      location: editableP?.location || original.location,
+      category: editableP?.category || original.category,
+      cover: original.cover,
+      images: (original.images && original.images.length > 0) ? original.images : [original.cover],
     }
   })
 
@@ -51,13 +45,13 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
   const heroTitleRef = useRef<HTMLHeadingElement>(null)
   const gridRef = useRef<HTMLDivElement>(null)
 
-  const heroProjects = [
+  const heroProjects: Proyecto[] = [
     projectsToUse.find((p) => p.id === 'casa-anam') || projectsToUse[0],
     projectsToUse.find((p) => p.id === 'quadro-500') || projectsToUse[1],
     projectsToUse.find((p) => p.id === 'loft-nj') || projectsToUse[2],
     projectsToUse.find((p) => p.id === 'verdi') || projectsToUse[3],
     projectsToUse.find((p) => p.id === 'casa-la-reserva') || projectsToUse[4],
-  ].filter(Boolean)
+  ].filter(Boolean) as Proyecto[]
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
@@ -212,7 +206,28 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [activeProject])
 
-  const currentHero = heroProjects[heroIndex]
+  // Preload adjacent images in lightbox for instantaneous browsing
+  useEffect(() => {
+    if (!activeProject || !activeProject.images || activeProject.images.length === 0) return
+    const nextIdx = (activeImageIndex + 1) % activeProject.images.length
+    const prevIdx = (activeImageIndex - 1 + activeProject.images.length) % activeProject.images.length
+    const imgNext = new Image()
+    imgNext.src = activeProject.images[nextIdx]
+    const imgPrev = new Image()
+    imgPrev.src = activeProject.images[prevIdx]
+  }, [activeProject, activeImageIndex])
+
+  // Preload next hero slide image
+  useEffect(() => {
+    if (heroProjects.length === 0) return
+    const nextHeroIdx = (heroIndex + 1) % heroProjects.length
+    if (heroProjects[nextHeroIdx]?.cover) {
+      const img = new Image()
+      img.src = heroProjects[nextHeroIdx].cover
+    }
+  }, [heroIndex, heroProjects])
+
+  const currentHero = heroProjects[heroIndex] || heroProjects[0] || projectsToUse[0]
 
   return (
     <div
@@ -326,26 +341,6 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
               pointerEvents: 'none',
             }}
           />
-          {/* Negative Mode Label Inside Lens */}
-          <span
-            style={{
-              position: 'absolute',
-              bottom: '12px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              fontFamily: 'var(--font-sans)',
-              fontSize: '9px',
-              letterSpacing: '0.2em',
-              color: '#FFFFFF',
-              backgroundColor: 'var(--color-accent)',
-              padding: '3px 10px',
-              borderRadius: '100px',
-              fontWeight: 700,
-              textTransform: 'uppercase',
-            }}
-          >
-            NEGATIVO X-RAY
-          </span>
         </div>
 
         {/* Floating Header Actions Bar */}
@@ -675,6 +670,11 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
                   alt={project.name}
                   loading="lazy"
                   decoding="async"
+                  onError={(e) => {
+                    if (project.images && project.images[0] && e.currentTarget.src !== project.images[0]) {
+                      e.currentTarget.src = project.images[0]
+                    }
+                  }}
                   style={{
                     width: '100%',
                     height: '100%',
@@ -896,9 +896,14 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
 
             {/* Active Image */}
             <img
-              src={activeProject.images[activeImageIndex]}
+              src={activeProject.images[activeImageIndex] || activeProject.cover}
               alt={`${activeProject.name} ${activeImageIndex + 1}`}
               decoding="async"
+              onError={(e) => {
+                if (activeProject.cover && e.currentTarget.src !== activeProject.cover) {
+                  e.currentTarget.src = activeProject.cover
+                }
+              }}
               style={{
                 maxHeight: '75vh',
                 maxWidth: '90vw',

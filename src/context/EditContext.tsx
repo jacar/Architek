@@ -251,25 +251,25 @@ const defaultContent: SiteContent = {
     desc2Es: 'Ser distribuidor autorizado en Colombia y Estados Unidos nos permite respaldar cada proyecto con garantía real, la cual es gestionada directamente por nosotros.',
     desc2En: 'Being an authorized distributor in Colombia and the United States allows us to back every project with a real warranty — managed directly by us, from start to finish.',
     logos: [
-      { id: '1',  name: 'Marca 1',  image: new URL('../Marcas Aliadas/1.png',  import.meta.url).href },
-      { id: '2',  name: 'Marca 2',  image: new URL('../Marcas Aliadas/2.png',  import.meta.url).href },
-      { id: '3',  name: 'Marca 3',  image: new URL('../Marcas Aliadas/3.png',  import.meta.url).href },
-      { id: '4',  name: 'Marca 4',  image: new URL('../Marcas Aliadas/4.png',  import.meta.url).href },
-      { id: '5',  name: 'Marca 5',  image: new URL('../Marcas Aliadas/5.png',  import.meta.url).href },
-      { id: '6',  name: 'Marca 6',  image: new URL('../Marcas Aliadas/6.png',  import.meta.url).href },
-      { id: '7',  name: 'Marca 7',  image: new URL('../Marcas Aliadas/7.png',  import.meta.url).href },
-      { id: '8',  name: 'Marca 8',  image: new URL('../Marcas Aliadas/8.png',  import.meta.url).href },
-      { id: '9',  name: 'Marca 9',  image: new URL('../Marcas Aliadas/9.png',  import.meta.url).href },
-      { id: '10', name: 'Marca 10', image: new URL('../Marcas Aliadas/10.png', import.meta.url).href },
-      { id: '11', name: 'Marca 11', image: new URL('../Marcas Aliadas/11.png', import.meta.url).href },
-      { id: '12', name: 'Marca 12', image: new URL('../Marcas Aliadas/12.png', import.meta.url).href },
-      { id: '13', name: 'Marca 13', image: new URL('../Marcas Aliadas/13.png', import.meta.url).href },
-      { id: '14', name: 'Marca 14', image: new URL('../Marcas Aliadas/14.png', import.meta.url).href },
-      { id: '15', name: 'Marca 15', image: new URL('../Marcas Aliadas/15.png', import.meta.url).href },
-      { id: '16', name: 'Marca 16', image: new URL('../Marcas Aliadas/16.png', import.meta.url).href },
-      { id: '17', name: 'Marca 17', image: new URL('../Marcas Aliadas/17.png', import.meta.url).href },
-      { id: '18', name: 'Marca 18', image: new URL('../Marcas Aliadas/18.png', import.meta.url).href },
-      { id: '19', name: 'Marca 19', image: new URL('../Marcas Aliadas/19.png', import.meta.url).href },
+      { id: '1',  name: 'Marca 1',  image: new URL('../Marcas Aliadas/1.webp',  import.meta.url).href },
+      { id: '2',  name: 'Marca 2',  image: new URL('../Marcas Aliadas/2.webp',  import.meta.url).href },
+      { id: '3',  name: 'Marca 3',  image: new URL('../Marcas Aliadas/3.webp',  import.meta.url).href },
+      { id: '4',  name: 'Marca 4',  image: new URL('../Marcas Aliadas/4.webp',  import.meta.url).href },
+      { id: '5',  name: 'Marca 5',  image: new URL('../Marcas Aliadas/5.webp',  import.meta.url).href },
+      { id: '6',  name: 'Marca 6',  image: new URL('../Marcas Aliadas/6.webp',  import.meta.url).href },
+      { id: '7',  name: 'Marca 7',  image: new URL('../Marcas Aliadas/7.webp',  import.meta.url).href },
+      { id: '8',  name: 'Marca 8',  image: new URL('../Marcas Aliadas/8.webp',  import.meta.url).href },
+      { id: '9',  name: 'Marca 9',  image: new URL('../Marcas Aliadas/9.webp',  import.meta.url).href },
+      { id: '10', name: 'Marca 10', image: new URL('../Marcas Aliadas/10.webp', import.meta.url).href },
+      { id: '11', name: 'Marca 11', image: new URL('../Marcas Aliadas/11.webp', import.meta.url).href },
+      { id: '12', name: 'Marca 12', image: new URL('../Marcas Aliadas/12.webp', import.meta.url).href },
+      { id: '13', name: 'Marca 13', image: new URL('../Marcas Aliadas/13.webp', import.meta.url).href },
+      { id: '14', name: 'Marca 14', image: new URL('../Marcas Aliadas/14.webp', import.meta.url).href },
+      { id: '15', name: 'Marca 15', image: new URL('../Marcas Aliadas/15.webp', import.meta.url).href },
+      { id: '16', name: 'Marca 16', image: new URL('../Marcas Aliadas/16.webp', import.meta.url).href },
+      { id: '17', name: 'Marca 17', image: new URL('../Marcas Aliadas/17.webp', import.meta.url).href },
+      { id: '18', name: 'Marca 18', image: new URL('../Marcas Aliadas/18.webp', import.meta.url).href },
+      { id: '19', name: 'Marca 19', image: new URL('../Marcas Aliadas/19.webp', import.meta.url).href },
     ],
   },
   contact: {
@@ -305,7 +305,7 @@ const defaultContent: SiteContent = {
   },
 }
 
-const STORAGE_KEY = 'archtek-site-content-v2'
+const STORAGE_KEY = 'archtek-site-content-v3'
 
 // ---- Context ----
 interface EditContextType {
@@ -322,6 +322,13 @@ const EditContext = createContext<EditContextType | undefined>(undefined)
 export const EditProvider = ({ children }: { children: ReactNode }) => {
   const [content, setContent] = useState<SiteContent>(() => {
     try {
+      // Clean up legacy storage versions that could carry stale asset hashes
+      try {
+        localStorage.removeItem('archtek-site-content')
+        localStorage.removeItem('archtek-site-content-v1')
+        localStorage.removeItem('archtek-site-content-v2')
+      } catch {}
+
       const saved = localStorage.getItem(STORAGE_KEY)
       if (saved) {
         const parsed = JSON.parse(saved)
@@ -334,17 +341,31 @@ export const EditProvider = ({ children }: { children: ReactNode }) => {
         const brandsMerged = {
           ...defaultContent.brands,
           ...(parsed.brands || {}),
-          logos: (parsed.brands?.logos && Array.isArray(parsed.brands.logos) && parsed.brands.logos.length > 0
-            && parsed.brands.logos.some((l: { image?: string }) => l.image && l.image.trim() !== ''))
-            ? parsed.brands.logos
-            : defaultContent.brands.logos,
+          logos: defaultContent.brands.logos.map((defLogo) => {
+            const savedLogo = (parsed.brands?.logos || []).find((l: any) => l.id === defLogo.id)
+            const isCustom = savedLogo?.image && (savedLogo.image.startsWith('data:') || (savedLogo.image.startsWith('http') && !savedLogo.image.includes('/assets/')))
+            return {
+              id: defLogo.id,
+              name: savedLogo?.name || defLogo.name,
+              image: isCustom ? savedLogo.image : defLogo.image,
+            }
+          }),
         }
         const galleryMerged = {
           ...defaultContent.gallery,
           ...(parsed.gallery || {}),
-          projects: (parsed.gallery?.projects && Array.isArray(parsed.gallery.projects) && parsed.gallery.projects.length > 0)
-            ? parsed.gallery.projects
-            : defaultContent.gallery.projects,
+          // Always bind canonical build assets (covers and images) from proyectosConCover
+          projects: proyectosConCover.map((orig) => {
+            const savedP = (parsed.gallery?.projects || []).find((p: any) => p.id === orig.id)
+            return {
+              id: orig.id,
+              name: savedP?.name || orig.name,
+              location: savedP?.location || orig.location,
+              category: savedP?.category || orig.category,
+              cover: orig.cover,
+              images: orig.images,
+            }
+          }),
         }
         return {
           ...defaultContent,

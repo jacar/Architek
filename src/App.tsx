@@ -25,6 +25,18 @@ export default function App() {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null)
   const lenisRef = useRef<Lenis | null>(null)
 
+  // Called when splash intro animation completes
+  const handleIntroFinished = () => {
+    // Force scroll to absolute top before revealing content
+    window.scrollTo(0, 0)
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true })
+    }
+    setIntroFinished(true)
+  }
+
   // Lenis Smooth Scroll Setup
   useEffect(() => {
     if ('scrollRestoration' in history) {
@@ -121,7 +133,7 @@ export default function App() {
       <EditorSidebar />
 
       {!introFinished && (
-        <SplashIntro onEnter={() => setIntroFinished(true)} />
+        <SplashIntro onEnter={handleIntroFinished} />
       )}
 
       {/* Custom cursor — desktop only */}
