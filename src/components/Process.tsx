@@ -25,7 +25,7 @@ export function Process() {
       ref={sectionRef}
       id="process"
       style={{
-        padding: 'clamp(80px, 12vw, 160px) clamp(24px, 5vw, 80px)',
+        padding: 'clamp(48px, 6vw, 76px) clamp(20px, 5vw, 60px)',
         backgroundColor: 'var(--color-surface)',
         color: 'var(--color-fg)',
       }}
@@ -38,7 +38,7 @@ export function Process() {
             fontWeight: 700,
             textTransform: 'uppercase',
             color: 'var(--color-fg)',
-            margin: '0 0 24px 0',
+            margin: '0 0 16px 0',
           }}
         >
           {t(proc.titleEs, proc.titleEn)}
@@ -46,25 +46,25 @@ export function Process() {
         <p
           style={{
             fontFamily: 'var(--font-sans)',
-            fontSize: 'clamp(16px, 1.5vw, 20px)',
+            fontSize: 'clamp(15px, 1.4vw, 19px)',
             color: 'var(--color-muted-fg)',
             maxWidth: 800,
             lineHeight: 1.6,
-            marginBottom: 'clamp(60px, 8vw, 100px)',
+            marginBottom: 'clamp(32px, 4vw, 44px)',
           }}
         >
           {t(proc.subtitleEs, proc.subtitleEn)}
         </p>
 
-        <div className="process-list" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+        <div className="process-list" style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(24px, 3vw, 36px)' }}>
           {proc.steps.map((step) => (
             <div
               key={step.id}
               className="process-item"
               style={{
                 display: 'flex',
-                gap: '30px',
-                paddingBottom: '40px',
+                gap: 'clamp(18px, 3vw, 30px)',
+                paddingBottom: 'clamp(20px, 2.5vw, 32px)',
                 borderBottom: '1px solid color-mix(in srgb, var(--color-fg) 10%, transparent)',
                 opacity: 0,
               }}

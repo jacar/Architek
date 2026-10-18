@@ -1,11 +1,17 @@
 import { useLanguage } from '../context/LanguageContext'
 import { useEdit } from '../context/EditContext'
+import { useTheme } from '../context/ThemeContext'
 
 export function Footer() {
   const year = new Date().getFullYear()
   const { t } = useLanguage()
   const { content } = useEdit()
+  const { theme } = useTheme()
   const contact = content.contact
+
+  const baseUrl = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
+  const logoDark = `${baseUrl}/images/logo-horizontal-dark.webp`
+  const logoLight = `${baseUrl}/images/logo-horizontal-light.webp`
 
   const instagramUrl = contact.social?.instagram || 'https://www.instagram.com/archtekstudio'
   const tiktokUrl = contact.social?.tiktok || 'https://www.tiktok.com/@archtekstudio'
@@ -41,19 +47,28 @@ export function Footer() {
         >
           {/* Brand Info */}
           <div>
-            <span
+            <img
+              src={theme === 'light' ? logoLight : logoDark}
+              alt="ARCHTEK STUDIO"
               style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(18px, 1.8vw, 24px)',
-                fontWeight: 700,
-                color: 'var(--color-fg)',
-                letterSpacing: '0.05em',
-                textTransform: 'uppercase',
+                height: 'clamp(20px, 2.2vw, 26px)',
+                width: 'auto',
                 display: 'block',
+                objectFit: 'contain',
+                marginBottom: '8px',
+                transition: 'opacity 0.25s ease',
               }}
-            >
-              ARCHTEK STUDIO
-            </span>
+              onError={(e) => {
+                const target = e.currentTarget
+                const isLight = theme === 'light'
+                const fallback = isLight
+                  ? `${baseUrl}/images/Logo horizontal negro.png`
+                  : `${baseUrl}/images/Logo horizonatl blanco.png`
+                if (target.src !== fallback) {
+                  target.src = fallback
+                }
+              }}
+            />
             <p
               style={{
                 fontFamily: 'var(--font-sans)',

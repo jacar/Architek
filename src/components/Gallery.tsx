@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 import { proyectosConCover, Proyecto } from '../data/proyectos'
 import { useLanguage } from '../context/LanguageContext'
 import { useEdit, defaultContent } from '../context/EditContext'
@@ -7,9 +8,10 @@ import { gsap } from '../lib/animations'
 interface GalleryProps {
   onBackToHome: () => void
   initialProjectId?: string | null
+  onLightboxChange?: (isOpen: boolean) => void
 }
 
-export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
+export function Gallery({ onBackToHome, initialProjectId, onLightboxChange }: GalleryProps) {
   const { lang, t } = useLanguage()
   const { content } = useEdit()
   const galleryData = content?.gallery || defaultContent.gallery
@@ -67,6 +69,11 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
       }
     }
   }, [initialProjectId, projectsToUse])
+
+  // Notify parent container when project lightbox modal opens/closes
+  useEffect(() => {
+    onLightboxChange?.(!!activeProject)
+  }, [activeProject, onLightboxChange])
 
   // Auto-slide Hero Slider
   useEffect(() => {
@@ -192,6 +199,19 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
   const handleNextImage = () => {
     if (!activeProject) return
     setActiveImageIndex((prev) => (prev === activeProject.images.length - 1 ? 0 : prev + 1))
+  }
+
+  // Touch swipe support for mobile lightbox navigation
+  const touchStartX = useRef<number | null>(null)
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return
+    const diff = touchStartX.current - e.changedTouches[0].clientX
+    if (diff > 45) handleNextImage()
+    if (diff < -45) handlePrevImage()
+    touchStartX.current = null
   }
 
   // Keyboard support for Lightbox
@@ -439,11 +459,12 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
                 fontFamily: 'var(--font-sans)',
                 fontSize: '12px',
                 letterSpacing: '0.3em',
-                color: 'var(--color-accent)',
+                color: '#EDE8DF',
                 textTransform: 'uppercase',
                 fontWeight: 700,
                 display: 'block',
                 marginBottom: '12px',
+                textShadow: '0 2px 8px rgba(0,0,0,0.85)',
               }}
             >
               {lang === 'ES' ? currentHero.category.es : currentHero.category.en} • {currentHero.location}
@@ -720,7 +741,7 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
                   style={{
                     fontFamily: 'var(--font-sans)',
                     fontSize: '12px',
-                    color: 'var(--color-accent)',
+                    color: '#C7BFA7',
                     textTransform: 'uppercase',
                     letterSpacing: '0.15em',
                     fontWeight: 600,
@@ -765,19 +786,27 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
         </div>
       </div>
 
-      {/* Lightbox / Modal for detailed project images */}
-      {activeProject && (
+      {/* Lightbox / Modal for detailed project images (Portaled directly to body to bypass stacking contexts) */}
+      {activeProject && typeof document !== 'undefined' && createPortal(
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={activeProject.name}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setActiveProject(null)
+            }
+          }}
           style={{
             position: 'fixed',
             inset: 0,
-            zIndex: 9999,
-            backgroundColor: 'rgba(10, 10, 10, 0.95)',
-            backdropFilter: 'blur(16px)',
+            zIndex: 999999,
+            backgroundColor: 'rgba(10, 10, 10, 0.96)',
+            backdropFilter: 'blur(20px)',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
-            padding: '24px',
+            padding: 'clamp(12px, 2vh, 24px) clamp(16px, 3vw, 32px)',
           }}
         >
           {/* Lightbox Header */}
@@ -787,18 +816,23 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
               alignItems: 'center',
               justifyContent: 'space-between',
               color: '#FFFFFF',
-              zIndex: 10,
-              padding: '8px 16px',
+              zIndex: 30,
+              padding: '4px 8px',
+              gap: '16px',
             }}
           >
-            <div>
+            <div style={{ flex: 1, minWidth: 0 }}>
               <h2
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: '24px',
+                  fontSize: 'clamp(18px, 2.5vw, 24px)',
                   margin: 0,
                   textTransform: 'uppercase',
                   fontWeight: 700,
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  letterSpacing: '0.02em',
                 }}
               >
                 {activeProject.name}
@@ -806,22 +840,26 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
               <p
                 style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '13px',
+                  fontSize: 'clamp(11px, 1.2vw, 13px)',
                   color: 'rgba(255,255,255,0.7)',
-                  margin: '4px 0 0 0',
+                  margin: '3px 0 0 0',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
                 }}
               >
                 {activeProject.location} • {lang === 'ES' ? activeProject.category.es : activeProject.category.en}
               </p>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexShrink: 0 }}>
               <span
                 style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '14px',
-                  color: 'rgba(255,255,255,0.6)',
+                  fontSize: '13px',
+                  color: 'rgba(255,255,255,0.7)',
                   fontWeight: 600,
+                  letterSpacing: '0.05em',
                 }}
               >
                 {activeImageIndex + 1} / {activeProject.images.length}
@@ -829,10 +867,14 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
 
               {/* Close Button */}
               <button
-                onClick={() => setActiveProject(null)}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setActiveProject(null)
+                }}
+                aria-label={t('Cerrar galería', 'Close gallery')}
                 style={{
-                  background: 'rgba(255,255,255,0.1)',
-                  border: '1px solid rgba(255,255,255,0.2)',
+                  background: 'rgba(255,255,255,0.15)',
+                  border: '1px solid rgba(255,255,255,0.3)',
                   color: '#FFFFFF',
                   width: '44px',
                   height: '44px',
@@ -841,12 +883,20 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  transition: 'background-color 0.2s ease',
+                  transition: 'background-color 0.2s ease, transform 0.2s ease',
+                  flexShrink: 0,
+                  zIndex: 40,
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.25)')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)')}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.3)'
+                  e.currentTarget.style.transform = 'scale(1.06)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.15)'
+                  e.currentTarget.style.transform = 'scale(1)'
+                }}
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <line x1="18" y1="6" x2="6" y2="18" />
                   <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
@@ -856,40 +906,53 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
 
           {/* Main Display Image */}
           <div
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
             style={{
               flex: 1,
               position: 'relative',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              margin: '16px 0',
+              margin: '12px 0',
               overflow: 'hidden',
+              touchAction: 'pan-y',
             }}
           >
             {/* Prev Arrow */}
             <button
-              onClick={handlePrevImage}
+              onClick={(e) => {
+                e.stopPropagation()
+                handlePrevImage()
+              }}
+              aria-label={t('Foto anterior', 'Previous photo')}
               style={{
                 position: 'absolute',
-                left: '20px',
-                zIndex: 10,
-                background: 'rgba(10,10,10,0.7)',
-                border: '1px solid rgba(255,255,255,0.2)',
+                left: 'clamp(10px, 2vw, 24px)',
+                zIndex: 30,
+                background: 'rgba(10,10,10,0.75)',
+                border: '1px solid rgba(255,255,255,0.25)',
                 color: '#FFFFFF',
-                width: '52px',
-                height: '52px',
+                width: 'clamp(42px, 4vw, 52px)',
+                height: 'clamp(42px, 4vw, 52px)',
                 borderRadius: '50%',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 backdropFilter: 'blur(10px)',
-                transition: 'transform 0.2s ease',
+                transition: 'all 0.2s ease',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-              onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.1)'
+                e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)'
+                e.currentTarget.style.backgroundColor = 'rgba(10,10,10,0.75)'
+              }}
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M15 18l-6-6 6-6" />
               </svg>
             </button>
@@ -905,39 +968,50 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
                 }
               }}
               style={{
-                maxHeight: '75vh',
-                maxWidth: '90vw',
+                maxHeight: '74vh',
+                maxWidth: '92vw',
                 objectFit: 'contain',
                 borderRadius: '12px',
-                boxShadow: '0 25px 50px rgba(0,0,0,0.8)',
+                boxShadow: '0 25px 50px rgba(0,0,0,0.85)',
                 transition: 'opacity 0.2s ease',
+                userSelect: 'none',
               }}
             />
 
             {/* Next Arrow */}
             <button
-              onClick={handleNextImage}
+              onClick={(e) => {
+                e.stopPropagation()
+                handleNextImage()
+              }}
+              aria-label={t('Foto siguiente', 'Next photo')}
               style={{
                 position: 'absolute',
-                right: '20px',
-                zIndex: 10,
-                background: 'rgba(10,10,10,0.7)',
-                border: '1px solid rgba(255,255,255,0.2)',
+                right: 'clamp(10px, 2vw, 24px)',
+                zIndex: 30,
+                background: 'rgba(10,10,10,0.75)',
+                border: '1px solid rgba(255,255,255,0.25)',
                 color: '#FFFFFF',
-                width: '52px',
-                height: '52px',
+                width: 'clamp(42px, 4vw, 52px)',
+                height: 'clamp(42px, 4vw, 52px)',
                 borderRadius: '50%',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 backdropFilter: 'blur(10px)',
-                transition: 'transform 0.2s ease',
+                transition: 'all 0.2s ease',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-              onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.1)'
+                e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)'
+                e.currentTarget.style.backgroundColor = 'rgba(10,10,10,0.75)'
+              }}
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M9 18l6-6-6-6" />
               </svg>
             </button>
@@ -950,8 +1024,8 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
               justifyContent: 'center',
               gap: '10px',
               overflowX: 'auto',
-              padding: '10px 0',
-              maxHeight: '80px',
+              padding: '8px 0',
+              maxHeight: '76px',
             }}
           >
             {activeProject.images.map((img, idx) => (
@@ -960,12 +1034,12 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
                 onClick={() => setActiveImageIndex(idx)}
                 style={{
                   background: 'none',
-                  border: idx === activeImageIndex ? '2px solid var(--color-accent)' : '2px solid transparent',
+                  border: idx === activeImageIndex ? '2px solid #FFFFFF' : '2px solid transparent',
                   padding: 0,
                   borderRadius: '8px',
                   overflow: 'hidden',
                   cursor: 'pointer',
-                  opacity: idx === activeImageIndex ? 1 : 0.4,
+                  opacity: idx === activeImageIndex ? 1 : 0.45,
                   transition: 'opacity 0.2s ease, border-color 0.2s ease',
                   flexShrink: 0,
                 }}
@@ -985,7 +1059,8 @@ export function Gallery({ onBackToHome, initialProjectId }: GalleryProps) {
               </button>
             ))}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   )

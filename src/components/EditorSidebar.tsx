@@ -638,7 +638,7 @@ export function EditorSidebar() {
                       ...p,
                       brands: {
                         ...p.brands,
-                        logos: p.brands.logos.filter((_, i) => i !== idx)
+                        logos: (p.brands.logos || []).filter((_, i) => i !== idx)
                       }
                     }))}
                     style={{
@@ -658,7 +658,7 @@ export function EditorSidebar() {
                   label="Nombre de Marca"
                   value={logo.name}
                   onChange={(v) => updateContent((p) => {
-                    const logos = [...p.brands.logos]
+                    const logos = [...(p.brands.logos || [])]
                     logos[idx] = { ...logos[idx], name: v }
                     return { ...p, brands: { ...p.brands, logos } }
                   })}
@@ -667,7 +667,7 @@ export function EditorSidebar() {
                   label="Logo (Subir archivo o URL)"
                   value={logo.image}
                   onChange={(v) => updateContent((p) => {
-                    const logos = [...p.brands.logos]
+                    const logos = [...(p.brands.logos || [])]
                     logos[idx] = { ...logos[idx], image: v }
                     return { ...p, brands: { ...p.brands, logos } }
                   })}

@@ -251,25 +251,26 @@ const defaultContent: SiteContent = {
     desc2Es: 'Ser distribuidor autorizado en Colombia y Estados Unidos nos permite respaldar cada proyecto con garantía real, la cual es gestionada directamente por nosotros.',
     desc2En: 'Being an authorized distributor in Colombia and the United States allows us to back every project with a real warranty — managed directly by us, from start to finish.',
     logos: [
-      { id: '1',  name: 'Marca 1',  image: new URL('../Marcas Aliadas/1.webp',  import.meta.url).href },
-      { id: '2',  name: 'Marca 2',  image: new URL('../Marcas Aliadas/2.webp',  import.meta.url).href },
-      { id: '3',  name: 'Marca 3',  image: new URL('../Marcas Aliadas/3.webp',  import.meta.url).href },
-      { id: '4',  name: 'Marca 4',  image: new URL('../Marcas Aliadas/4.webp',  import.meta.url).href },
-      { id: '5',  name: 'Marca 5',  image: new URL('../Marcas Aliadas/5.webp',  import.meta.url).href },
-      { id: '6',  name: 'Marca 6',  image: new URL('../Marcas Aliadas/6.webp',  import.meta.url).href },
-      { id: '7',  name: 'Marca 7',  image: new URL('../Marcas Aliadas/7.webp',  import.meta.url).href },
-      { id: '8',  name: 'Marca 8',  image: new URL('../Marcas Aliadas/8.webp',  import.meta.url).href },
-      { id: '9',  name: 'Marca 9',  image: new URL('../Marcas Aliadas/9.webp',  import.meta.url).href },
-      { id: '10', name: 'Marca 10', image: new URL('../Marcas Aliadas/10.webp', import.meta.url).href },
-      { id: '11', name: 'Marca 11', image: new URL('../Marcas Aliadas/11.webp', import.meta.url).href },
-      { id: '12', name: 'Marca 12', image: new URL('../Marcas Aliadas/12.webp', import.meta.url).href },
-      { id: '13', name: 'Marca 13', image: new URL('../Marcas Aliadas/13.webp', import.meta.url).href },
-      { id: '14', name: 'Marca 14', image: new URL('../Marcas Aliadas/14.webp', import.meta.url).href },
-      { id: '15', name: 'Marca 15', image: new URL('../Marcas Aliadas/15.webp', import.meta.url).href },
-      { id: '16', name: 'Marca 16', image: new URL('../Marcas Aliadas/16.webp', import.meta.url).href },
-      { id: '17', name: 'Marca 17', image: new URL('../Marcas Aliadas/17.webp', import.meta.url).href },
-      { id: '18', name: 'Marca 18', image: new URL('../Marcas Aliadas/18.webp', import.meta.url).href },
-      { id: '19', name: 'Marca 19', image: new URL('../Marcas Aliadas/19.webp', import.meta.url).href },
+      { id: 'karman', name: 'Karman', image: new URL('../Marcas Aliadas/aliadoslogo/01_Karman.webp', import.meta.url).href },
+      { id: 'aromas', name: 'Aromas del Campo', image: new URL('../Marcas Aliadas/aliadoslogo/02_Aromas.webp', import.meta.url).href },
+      { id: 'axolight', name: 'Axolight', image: new URL('../Marcas Aliadas/aliadoslogo/03_Axolight.webp', import.meta.url).href },
+      { id: 'bomma', name: 'Bomma', image: new URL('../Marcas Aliadas/aliadoslogo/04_Bomma.webp', import.meta.url).href },
+      { id: 'brokis', name: 'Brokis', image: new URL('../Marcas Aliadas/aliadoslogo/05_Brokis.webp', import.meta.url).href },
+      { id: 'emotional-light', name: 'Emotional Light', image: new URL('../Marcas Aliadas/aliadoslogo/06_Emotional_Light.webp', import.meta.url).href },
+      { id: 'flos', name: 'Flos', image: new URL('../Marcas Aliadas/aliadoslogo/07_Flos.webp', import.meta.url).href },
+      { id: 'foscarini', name: 'Foscarini', image: new URL('../Marcas Aliadas/aliadoslogo/08_Foscarini.webp', import.meta.url).href },
+      { id: 'hofflights', name: 'Hofflights', image: new URL('../Marcas Aliadas/aliadoslogo/09_Hofflights.webp', import.meta.url).href },
+      { id: 'wac-lighting', name: 'WAC Lighting', image: new URL('../Marcas Aliadas/aliadoslogo/10_WAC_Lighting.webp', import.meta.url).href },
+      { id: 'lodes', name: 'Lodes', image: new URL('../Marcas Aliadas/aliadoslogo/11_Lodes.webp', import.meta.url).href },
+      { id: 'lutron', name: 'Lutron', image: new URL('../Marcas Aliadas/aliadoslogo/12_Lutron.webp', import.meta.url).href },
+      { id: 'nexus21', name: 'Nexus 21', image: new URL('../Marcas Aliadas/aliadoslogo/13_Nexus21.webp', import.meta.url).href },
+      { id: 'platek', name: 'Platek', image: new URL('../Marcas Aliadas/aliadoslogo/14_Platek.webp', import.meta.url).href },
+      { id: 'quasar-holland', name: 'Quasar Holland', image: new URL('../Marcas Aliadas/aliadoslogo/15_Quasar_Holland.webp', import.meta.url).href },
+      { id: 'santa-cole', name: 'Santa & Cole', image: new URL('../Marcas Aliadas/aliadoslogo/16_Santa_Cole.webp', import.meta.url).href },
+      { id: 'savant', name: 'Savant', image: new URL('../Marcas Aliadas/aliadoslogo/17_Savant.webp', import.meta.url).href },
+      { id: 'screen-innovations', name: 'Screen Innovations', image: new URL('../Marcas Aliadas/aliadoslogo/18_Screen_Innovations.webp', import.meta.url).href },
+      { id: 'sonance', name: 'Sonance', image: new URL('../Marcas Aliadas/aliadoslogo/19_Sonance.webp', import.meta.url).href },
+      { id: 'vibia', name: 'Vibia', image: new URL('../Marcas Aliadas/aliadoslogo/20_Vibia.webp', import.meta.url).href },
     ],
   },
   contact: {
@@ -305,7 +306,7 @@ const defaultContent: SiteContent = {
   },
 }
 
-const STORAGE_KEY = 'archtek-site-content-v3'
+const STORAGE_KEY = 'archtek-site-content-v5'
 
 // ---- Context ----
 interface EditContextType {
@@ -327,6 +328,7 @@ export const EditProvider = ({ children }: { children: ReactNode }) => {
         localStorage.removeItem('archtek-site-content')
         localStorage.removeItem('archtek-site-content-v1')
         localStorage.removeItem('archtek-site-content-v2')
+        localStorage.removeItem('archtek-site-content-v3')
       } catch {}
 
       const saved = localStorage.getItem(STORAGE_KEY)

@@ -26,7 +26,6 @@ function LogoCard({ logo, index }: { logo: { id: string; name: string; image: st
     if (!glowRef.current || !imgRef.current || !cardRef.current) return
     gsap.to(glowRef.current, { opacity: 1, duration: 0.3, ease: 'power2.out' })
     gsap.to(imgRef.current, {
-      filter: 'grayscale(0%) brightness(1.1)',
       scale: 1.08,
       opacity: 1,
       duration: 0.4,
@@ -34,7 +33,8 @@ function LogoCard({ logo, index }: { logo: { id: string; name: string; image: st
     })
     gsap.to(cardRef.current, {
       y: -5,
-      borderColor: 'rgba(184,160,110,0.4)',
+      borderColor: 'rgba(184,160,110,0.5)',
+      boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
       duration: 0.35,
       ease: 'power2.out',
     })
@@ -44,9 +44,8 @@ function LogoCard({ logo, index }: { logo: { id: string; name: string; image: st
     if (!glowRef.current || !imgRef.current || !cardRef.current) return
     gsap.to(glowRef.current, { opacity: 0, duration: 0.5, ease: 'power2.inOut' })
     gsap.to(imgRef.current, {
-      filter: 'grayscale(100%) brightness(0.9)',
       scale: 1,
-      opacity: 0.55,
+      opacity: 0.85,
       duration: 0.5,
       ease: 'power2.inOut',
     })
@@ -83,8 +82,9 @@ function LogoCard({ logo, index }: { logo: { id: string; name: string; image: st
         alignItems: 'center',
         justifyContent: 'center',
         flexShrink: 0,
-        width: '200px',
+        width: '210px',
         height: '110px',
+        padding: '12px 18px',
         borderRadius: '14px',
         border: '1px solid rgba(128,128,128,0.15)',
         backgroundColor: 'var(--color-surface)',
@@ -150,16 +150,19 @@ function LogoCard({ logo, index }: { logo: { id: string; name: string; image: st
           alt={logo.name}
           title={logo.name}
           style={{
-            width: '70%',
-            height: '65%',
+            maxWidth: '100%',
+            maxHeight: '52px',
+            width: 'auto',
+            height: 'auto',
             objectFit: 'contain',
             objectPosition: 'center',
-            filter: 'grayscale(100%) brightness(0.9)',
-            opacity: 0.55,
+            filter: 'var(--brand-logo-filter, brightness(0) invert(1))',
+            opacity: 0.85,
             display: 'block',
             position: 'relative',
             zIndex: 1,
             pointerEvents: 'none',
+            transition: 'opacity 0.3s ease',
           }}
         />
       ) : (
@@ -304,14 +307,14 @@ export function Brands() {
       ref={sectionRef}
       id="brands"
       style={{
-        padding: 'clamp(80px, 12vw, 160px) 0',
+        padding: 'clamp(48px, 6vw, 76px) 0',
         backgroundColor: 'var(--color-bg)',
         color: 'var(--color-fg)',
         overflow: 'hidden',
       }}
     >
       {/* ── Heading + description ── */}
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(24px, 5vw, 80px)' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(20px, 5vw, 60px)' }}>
         <h2
           className="brand-text"
           style={{
@@ -319,7 +322,7 @@ export function Brands() {
             fontSize: 'clamp(32px, 5vw, 64px)',
             fontWeight: 700,
             color: 'var(--color-fg)',
-            margin: '0 0 24px 0',
+            margin: '0 0 16px 0',
             opacity: 0,
           }}
         >
@@ -331,16 +334,16 @@ export function Brands() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '24px',
+            gap: '14px',
             maxWidth: 800,
-            marginBottom: 'clamp(48px, 6vw, 80px)',
+            marginBottom: 'clamp(32px, 4vw, 44px)',
             opacity: 0,
           }}
         >
-          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(16px, 1.5vw, 20px)', color: 'var(--color-muted-fg)', lineHeight: 1.6 }}>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(15px, 1.4vw, 19px)', color: 'var(--color-muted-fg)', lineHeight: 1.6 }}>
             {t(brands.descEs, brands.descEn)}
           </p>
-          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(14px, 1.2vw, 16px)', color: 'var(--color-muted-fg)', lineHeight: 1.6, fontWeight: 600 }}>
+          <p style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(13px, 1.1vw, 15px)', color: 'var(--color-muted-fg)', lineHeight: 1.6, fontWeight: 600 }}>
             {t(brands.desc2Es, brands.desc2En)}
           </p>
         </div>

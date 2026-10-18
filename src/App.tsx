@@ -23,7 +23,21 @@ export default function App() {
   const [introFinished, setIntroFinished] = useState(false)
   const [currentView, setCurrentView] = useState<'home' | 'gallery'>('home')
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
   const lenisRef = useRef<Lenis | null>(null)
+
+  // Freeze smooth scroll and body when project lightbox modal is active
+  useEffect(() => {
+    if (lightboxOpen) {
+      lenisRef.current?.stop()
+      document.body.style.overflow = 'hidden'
+      document.documentElement.style.overflow = 'hidden'
+    } else {
+      lenisRef.current?.start()
+      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+    }
+  }, [lightboxOpen])
 
   // Called when splash intro animation completes
   const handleIntroFinished = () => {
@@ -147,14 +161,16 @@ export default function App() {
         onNavigateGallery={handleNavigateGallery}
       />
 
-      {/* Fixed header */}
-      <Header menuOpen={menuOpen} onMenuToggle={() => setMenuOpen((v) => !v)} onLogoClick={() => handleNavigateHome()} />
+      {/* Fixed header — hidden when lightbox preview is open to prevent overlapping */}
+      {!lightboxOpen && (
+        <Header menuOpen={menuOpen} onMenuToggle={() => setMenuOpen((v) => !v)} onLogoClick={() => handleNavigateHome()} />
+      )}
 
-      {/* Floating Theme Toggle */}
-      <ThemeToggle />
+      {/* Floating Theme Toggle — hidden during lightbox */}
+      {!lightboxOpen && <ThemeToggle />}
 
-      {/* Floating Back to Top */}
-      {introFinished && <BackToTop />}
+      {/* Floating Back to Top — hidden during lightbox */}
+      {introFinished && !lightboxOpen && <BackToTop />}
 
       {/* Main Content View Router */}
       <main id="main-content" style={{ opacity: introFinished ? 1 : 0, transition: 'opacity 0.5s ease' }}>
@@ -174,6 +190,7 @@ export default function App() {
           <Gallery
             onBackToHome={() => handleNavigateHome()}
             initialProjectId={selectedProjectId}
+            onLightboxChange={setLightboxOpen}
           />
         )}
       </main>

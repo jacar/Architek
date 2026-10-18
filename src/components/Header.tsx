@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from '../lib/animations'
 import { useLanguage } from '../context/LanguageContext'
+import { useTheme } from '../context/ThemeContext'
 
 interface HeaderProps {
   menuOpen: boolean
@@ -12,6 +13,11 @@ export function Header({ menuOpen, onMenuToggle, onLogoClick }: HeaderProps) {
   const headerRef = useRef<HTMLElement>(null)
   const [scrolled, setScrolled] = useState(false)
   const { lang, setLang } = useLanguage()
+  const { theme } = useTheme()
+
+  const baseUrl = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
+  const logoDark = `${baseUrl}/images/logo-horizontal-dark.webp`
+  const logoLight = `${baseUrl}/images/logo-horizontal-light.webp`
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -53,12 +59,12 @@ export function Header({ menuOpen, onMenuToggle, onLogoClick }: HeaderProps) {
         left: 0,
         right: 0,
         zIndex: 100,
-        padding: 'clamp(20px, 3vw, 32px) clamp(24px, 5vw, 60px)',
+        padding: 'clamp(12px, 1.8vw, 18px) clamp(20px, 4vw, 50px)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         opacity: 0,
-        transition: 'background-color 0.5s ease',
+        transition: 'background-color 0.5s ease, padding 0.3s ease',
         backgroundColor: scrolled && !menuOpen ? 'color-mix(in srgb, var(--color-bg) 85%, transparent)' : 'transparent',
         backdropFilter: scrolled && !menuOpen ? 'blur(12px)' : 'none',
       }}
@@ -66,26 +72,37 @@ export function Header({ menuOpen, onMenuToggle, onLogoClick }: HeaderProps) {
       {/* Logo */}
       <button
         onClick={handleLogo}
-        aria-label="Ir al inicio"
+        aria-label="Ir al inicio - Archtek Studio"
         style={{
           background: 'none',
           border: 'none',
           cursor: 'pointer',
           padding: 0,
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
-        <span
+        <img
+          src={theme === 'light' ? logoLight : logoDark}
+          alt="ARCHTEK STUDIO"
           style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(18px, 1.8vw, 24px)',
-            fontWeight: 700,
-            color: 'var(--color-fg)',
-            letterSpacing: '0.05em',
-            textTransform: 'uppercase',
+            height: 'clamp(20px, 2.2vw, 28px)',
+            width: 'auto',
+            display: 'block',
+            objectFit: 'contain',
+            transition: 'opacity 0.25s ease',
           }}
-        >
-          ARCHTEK STUDIO
-        </span>
+          onError={(e) => {
+            const target = e.currentTarget
+            const isLight = theme === 'light'
+            const fallback = isLight
+              ? `${baseUrl}/images/Logo horizontal negro.png`
+              : `${baseUrl}/images/Logo horizonatl blanco.png`
+            if (target.src !== fallback) {
+              target.src = fallback
+            }
+          }}
+        />
       </button>
 
       {/* Right side: Lang Switcher + Menu Toggle */}

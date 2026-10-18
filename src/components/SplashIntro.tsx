@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react'
 import { gsap } from '../lib/animations'
+import logoIntro from '../logo intro.png'
 
 interface SplashIntroProps {
   onEnter: () => void
@@ -144,16 +145,27 @@ export function SplashIntro({ onEnter }: SplashIntroProps) {
         ref={logoRef}
         style={{
           position: 'absolute',
-          fontFamily: 'var(--font-display)',
-          fontSize: 'clamp(24px, 4vw, 48px)',
-          fontWeight: 700,
-          letterSpacing: '0.1em',
-          color: '#0A0A0A', // Dark text on the white flash
-          textTransform: 'uppercase',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: 'clamp(220px, 28vw, 420px)',
+          maxWidth: '85vw',
+          maxHeight: '50vh',
           opacity: 0,
+          pointerEvents: 'none',
         }}
       >
-        ARCHTEK STUDIO
+        <img
+          src={logoIntro}
+          alt="ARCHTEK STUDIO"
+          style={{
+            width: '100%',
+            height: 'auto',
+            maxHeight: '45vh',
+            display: 'block',
+            objectFit: 'contain',
+          }}
+        />
       </div>
     </div>
   )

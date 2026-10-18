@@ -58,7 +58,7 @@ export function About() {
       id="about"
       aria-label="Sobre el estudio"
       style={{
-        padding: 'clamp(80px, 12vw, 160px) clamp(24px, 5vw, 80px)',
+        padding: 'clamp(48px, 6vw, 76px) clamp(20px, 5vw, 60px)',
         backgroundColor: 'var(--color-surface)',
         color: 'var(--color-fg)',
       }}
@@ -68,17 +68,17 @@ export function About() {
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr',
-          gap: 'clamp(40px, 6vw, 100px)',
+          gap: 'clamp(28px, 4vw, 56px)',
           maxWidth: 1200,
           margin: '0 auto',
         }}
       >
         <div className="about-text-col">
-          <div className="about-title" style={{ marginBottom: 'clamp(32px, 5vw, 64px)' }}>
+          <div className="about-title" style={{ marginBottom: 'clamp(20px, 3vw, 36px)' }}>
             <h2
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(36px, 5.5vw, 86px)',
+                fontSize: 'clamp(32px, 5vw, 72px)',
                 fontWeight: 700,
                 lineHeight: 1.08,
                 letterSpacing: '-0.02em',
@@ -95,11 +95,11 @@ export function About() {
             className="about-manifesto"
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: 'clamp(16px, 1.5vw, 20px)',
+              fontSize: 'clamp(15px, 1.4vw, 19px)',
               fontWeight: 400,
               color: 'var(--color-fg)',
-              lineHeight: 1.8,
-              marginBottom: 'clamp(24px, 3vw, 40px)',
+              lineHeight: 1.75,
+              marginBottom: 'clamp(16px, 2vw, 24px)',
               maxWidth: 800,
               opacity: 0,
             }}
@@ -113,8 +113,8 @@ export function About() {
               fontFamily: 'var(--font-sans)',
               fontSize: 'clamp(14px, 1.2vw, 16px)',
               color: 'var(--color-muted-fg)',
-              lineHeight: 1.85,
-              marginBottom: 'clamp(40px, 5vw, 64px)',
+              lineHeight: 1.8,
+              marginBottom: 'clamp(28px, 3.5vw, 40px)',
               maxWidth: 600,
               opacity: 0,
             }}
@@ -127,11 +127,11 @@ export function About() {
             className="about-stats"
             style={{
               display: 'flex',
-              gap: 'clamp(40px, 6vw, 80px)',
-              paddingTop: 'clamp(24px, 3vw, 40px)',
+              gap: 'clamp(32px, 5vw, 64px)',
+              paddingTop: 'clamp(20px, 2.5vw, 32px)',
               borderTop: '1px solid color-mix(in srgb, var(--color-fg) 20%, transparent)',
               flexWrap: 'wrap',
-              marginBottom: '60px',
+              marginBottom: 'clamp(28px, 3.5vw, 40px)',
             }}
           >
             {about.stats.map((stat, idx) => (
@@ -200,12 +200,12 @@ export function About() {
           <div 
             className="about-values"
             style={{
-              paddingTop: 'clamp(24px, 3vw, 40px)',
+              paddingTop: 'clamp(20px, 2.5vw, 32px)',
               borderTop: '1px solid color-mix(in srgb, var(--color-fg) 20%, transparent)',
             }}
           >
             {about.values.map((val, idx) => (
-              <div key={idx} className="about-value" style={{ opacity: 0, marginBottom: '20px' }}>
+              <div key={idx} className="about-value" style={{ opacity: 0, marginBottom: '14px' }}>
                 <strong style={{ fontFamily: 'var(--font-display)', color: 'var(--color-accent)' }}>
                   — {t(val.titleEs, val.titleEn)} —
                 </strong>{' '}

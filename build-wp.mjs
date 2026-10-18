@@ -79,7 +79,11 @@ $site_desc = 'Estudio boutique especializado en diseño de iluminación arquitec
   <head>
     <meta charset="<?php bloginfo('charset'); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url($theme_uri . '/images/favicon-32x32.png'); ?>" />
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo esc_url($theme_uri . '/images/simbolo-gris.png'); ?>" />
+    <link rel="icon" type="image/png" href="<?php echo esc_url($theme_uri . '/images/Símbolo gris.png'); ?>" />
+    <link rel="apple-touch-icon" href="<?php echo esc_url($theme_uri . '/images/apple-touch-icon.png'); ?>" />
+    <link rel="shortcut icon" href="<?php echo esc_url($theme_uri . '/images/favicon.ico'); ?>" />
     <title><?php echo $site_title; ?></title>
 
     <!-- SEO Meta Tags -->
@@ -194,6 +198,14 @@ if (fs.existsSync(themeImagesDir)) {
 }
 if (fs.existsSync(path.join(distDir, 'images'))) {
   fs.cpSync(path.join(distDir, 'images'), themeImagesDir, { recursive: true });
+}
+const favFiles = ['simbolo-gris.png', 'Símbolo gris.png', 'favicon-32x32.png', 'favicon.png', 'apple-touch-icon.png', 'favicon.ico'];
+for (const f of favFiles) {
+  const src = path.join(process.cwd(), 'public', f);
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, path.join(themeImagesDir, f));
+    fs.copyFileSync(src, path.join(themeDir, f));
+  }
 }
 
 console.log('WordPress Theme generated successfully in /wp-theme folder!');

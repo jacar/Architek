@@ -85,7 +85,7 @@ export function Contact() {
       id="contact"
       aria-label="Contacto"
       style={{
-        padding: 'clamp(80px, 10vw, 150px) clamp(24px, 5vw, 80px)',
+        padding: 'clamp(48px, 6vw, 76px) clamp(20px, 5vw, 60px)',
         borderTop: '1px solid var(--color-border)',
         position: 'relative',
         backgroundColor: 'var(--color-bg)',
@@ -94,7 +94,7 @@ export function Contact() {
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         
         {/* Section Header */}
-        <div className="contact-header" style={{ marginBottom: 'clamp(48px, 6vw, 80px)', textAlign: 'left' }}>
+        <div className="contact-header" style={{ marginBottom: 'clamp(32px, 4vw, 44px)', textAlign: 'left' }}>
           <p
             style={{
               fontFamily: 'var(--font-sans)',

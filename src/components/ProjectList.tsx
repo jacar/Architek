@@ -77,23 +77,24 @@ export function ProjectList({ onViewGallery }: ProjectListProps) {
         left: 0, 
         right: 0,
         zIndex: 50, 
-        padding: 'clamp(80px, 10vw, 110px) clamp(24px, 5vw, 60px)', 
+        padding: 'clamp(56px, 7vh, 80px) clamp(20px, 4vw, 50px)', 
         pointerEvents: 'none',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'flex-start',
-        gap: '24px',
+        gap: '16px',
         flexWrap: 'wrap',
       }}>
-        <div>
+        <div style={{ maxWidth: 500 }}>
           <h2
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(32px, 5vw, 64px)',
+              fontSize: 'clamp(24px, 3.2vw, 42px)',
               fontWeight: 700,
               textTransform: 'uppercase',
               color: '#FFFFFF',
               margin: 0,
+              lineHeight: 1.15,
               textShadow: '0 4px 20px rgba(0,0,0,0.6)'
             }}
           >
@@ -102,10 +103,11 @@ export function ProjectList({ onViewGallery }: ProjectListProps) {
           <p
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: 'clamp(14px, 1.5vw, 18px)',
+              fontSize: 'clamp(12px, 1.1vw, 15px)',
               color: 'rgba(255,255,255,0.85)',
-              maxWidth: 550,
-              marginTop: 16,
+              maxWidth: 460,
+              marginTop: 8,
+              lineHeight: 1.45,
               textShadow: '0 2px 10px rgba(0,0,0,0.6)'
             }}
           >
@@ -128,25 +130,26 @@ export function ProjectList({ onViewGallery }: ProjectListProps) {
               background: 'rgba(0, 0, 0, 0.75)',
               border: '1px solid rgba(255, 255, 255, 0.4)',
               color: '#FFFFFF',
-              padding: '14px 28px',
+              padding: '10px 20px',
               borderRadius: '100px',
               fontFamily: 'var(--font-sans)',
-              fontSize: '14px',
+              fontSize: '12px',
               fontWeight: 700,
               letterSpacing: '0.05em',
               textTransform: 'uppercase',
               cursor: 'pointer',
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '12px',
+              gap: '8px',
               backdropFilter: 'blur(12px)',
               transition: 'all 0.25s ease',
               boxShadow: '0 8px 30px rgba(0,0,0,0.4)',
               whiteSpace: 'nowrap',
+              marginTop: '4px',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = 'var(--color-accent)'
-              e.currentTarget.style.color = '#000000'
+              e.currentTarget.style.color = '#FFFFFF'
               e.currentTarget.style.borderColor = 'var(--color-accent)'
               e.currentTarget.style.transform = 'translateY(-2px)'
             }}
@@ -158,7 +161,7 @@ export function ProjectList({ onViewGallery }: ProjectListProps) {
             }}
           >
             <span>{t('Ver todos los proyectos', 'View all projects')}</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
@@ -236,23 +239,30 @@ export function ProjectList({ onViewGallery }: ProjectListProps) {
                 inset: 0,
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center',
+                justifyContent: 'flex-end',
                 alignItems: 'center',
                 textAlign: 'center',
-                padding: '40px',
+                padding: 'clamp(20px, 4vw, 40px)',
+                paddingBottom: 'clamp(50px, 9vh, 90px)',
                 zIndex: 10,
               }}
             >
               <span
                 style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '13px',
-                  letterSpacing: '0.25em',
-                  color: 'var(--color-accent)',
+                  fontSize: 'clamp(11px, 1.1vw, 13px)',
+                  letterSpacing: '0.22em',
+                  color: '#EDE8DF',
                   textTransform: 'uppercase',
-                  marginBottom: '16px',
+                  marginBottom: '10px',
                   fontWeight: 600,
                   pointerEvents: 'none',
+                  textShadow: '0 2px 10px rgba(0,0,0,0.9)',
+                  backgroundColor: 'rgba(0, 0, 0, 0.45)',
+                  backdropFilter: 'blur(8px)',
+                  padding: '4px 14px',
+                  borderRadius: '100px',
+                  border: '1px solid rgba(255,255,255,0.25)',
                 }}
               >
                 {lang === 'ES' ? project.category.es : project.category.en}
@@ -260,13 +270,13 @@ export function ProjectList({ onViewGallery }: ProjectListProps) {
               <h3
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(40px, 6vw, 80px)',
+                  fontSize: 'clamp(32px, 5vw, 68px)',
                   fontWeight: 700,
                   color: '#FFFFFF',
-                  margin: '0 0 16px 0',
+                  margin: '0 0 10px 0',
                   lineHeight: 1.1,
                   textTransform: 'uppercase',
-                  textShadow: '0 4px 20px rgba(0,0,0,0.6)',
+                  textShadow: '0 4px 24px rgba(0,0,0,0.8)',
                   pointerEvents: 'none',
                 }}
               >
@@ -275,11 +285,12 @@ export function ProjectList({ onViewGallery }: ProjectListProps) {
               <p
                 style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '16px',
+                  fontSize: 'clamp(13px, 1.2vw, 15px)',
                   color: '#F5F5F0',
-                  margin: '0 0 24px 0',
+                  margin: '0 0 16px 0',
                   letterSpacing: '0.05em',
                   opacity: 0.9,
+                  textShadow: '0 2px 10px rgba(0,0,0,0.8)',
                   pointerEvents: 'none',
                 }}
               >
@@ -293,31 +304,33 @@ export function ProjectList({ onViewGallery }: ProjectListProps) {
                   onViewGallery?.(project.id)
                 }}
                 style={{
-                  background: 'rgba(255, 255, 255, 0.15)',
-                  border: '1px solid var(--color-accent)',
+                  background: 'rgba(0, 0, 0, 0.6)',
+                  border: '1px solid rgba(255, 255, 255, 0.5)',
                   color: '#FFFFFF',
-                  padding: '12px 24px',
+                  padding: '9px 20px',
                   borderRadius: '100px',
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '13px',
+                  fontSize: '11px',
                   fontWeight: 600,
-                  letterSpacing: '0.1em',
+                  letterSpacing: '0.08em',
                   textTransform: 'uppercase',
                   cursor: 'pointer',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '8px',
+                  gap: '6px',
                   backdropFilter: 'blur(8px)',
                   transition: 'all 0.25s ease',
                   pointerEvents: 'auto',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'var(--color-accent)'
+                  e.currentTarget.style.backgroundColor = '#FFFFFF'
                   e.currentTarget.style.color = '#000000'
+                  e.currentTarget.style.borderColor = '#FFFFFF'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)'
+                  e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'
                   e.currentTarget.style.color = '#FFFFFF'
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.5)'
                 }}
               >
                 {t('Ver Galería Completa', 'View Full Gallery')} →

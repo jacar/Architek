@@ -20,6 +20,7 @@
   --color-muted-fg: #888888;
   --color-surface: #111111;
   --color-border: rgba(255, 255, 255, 0.1);
+  --brand-logo-filter: brightness(0) invert(1);
   --font-display: 'Montserrat', system-ui, sans-serif;
   --font-sans: 'Jost', system-ui, sans-serif;
 }
@@ -31,6 +32,7 @@
   --color-muted-fg: #888888;
   --color-surface: #EAEAE5;
   --color-border: rgba(0, 0, 0, 0.1);
+  --brand-logo-filter: brightness(0);
 }
 
 *,

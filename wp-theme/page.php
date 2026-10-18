@@ -10,7 +10,11 @@ $site_desc = 'Estudio boutique especializado en diseño de iluminación arquitec
   <head>
     <meta charset="<?php bloginfo('charset'); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url($theme_uri . '/images/favicon-32x32.png'); ?>" />
+    <link rel="icon" type="image/png" sizes="192x192" href="<?php echo esc_url($theme_uri . '/images/simbolo-gris.png'); ?>" />
+    <link rel="icon" type="image/png" href="<?php echo esc_url($theme_uri . '/images/Símbolo gris.png'); ?>" />
+    <link rel="apple-touch-icon" href="<?php echo esc_url($theme_uri . '/images/apple-touch-icon.png'); ?>" />
+    <link rel="shortcut icon" href="<?php echo esc_url($theme_uri . '/images/favicon.ico'); ?>" />
     <title><?php echo $site_title; ?></title>
 
     <!-- SEO Meta Tags -->
@@ -73,8 +77,8 @@ $site_desc = 'Estudio boutique especializado en diseño de iluminación arquitec
         if (document.documentElement) document.documentElement.scrollTop = 0;
         if (document.body) document.body.scrollTop = 0;
       </script>
-      <script type="module" crossorigin src="<?php echo get_template_directory_uri(); ?>/assets/index-D1cMc-le.js?v=<?php echo filemtime(get_template_directory() . '/assets/index-D1cMc-le.js'); ?>"></script>
-      <link rel="stylesheet" crossorigin href="<?php echo get_template_directory_uri(); ?>/assets/index-CvUPqHLY.css?v=<?php echo filemtime(get_template_directory() . '/assets/index-CvUPqHLY.css'); ?>">
+      <script type="module" crossorigin src="<?php echo get_template_directory_uri(); ?>/assets/index-Dca7GfUu.js?v=<?php echo filemtime(get_template_directory() . '/assets/index-Dca7GfUu.js'); ?>"></script>
+      <link rel="stylesheet" crossorigin href="<?php echo get_template_directory_uri(); ?>/assets/index-Sf8QpuXy.css?v=<?php echo filemtime(get_template_directory() . '/assets/index-Sf8QpuXy.css'); ?>">
     <?php endif; ?>
     
     <?php wp_head(); ?>
